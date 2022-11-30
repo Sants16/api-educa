@@ -1,0 +1,150 @@
+const express = require('express')
+const app = express()
+
+const PORT = process.env.PORT || 8877
+
+app.get('/', (req, resp) => {
+    resp.json(
+        {
+            "usuarios": [
+              {
+                "name": "Eduardo",
+                "trofeu": false,
+                "email": "jvsantosrocha980@gmail.com",
+                "senha": "123",
+                "curso": "DS",
+                "id": 1
+              },
+              {
+                "name": "Rodrigo",
+                "trofeu": false,
+                "email": "rodrigodrigo@gmail.com",
+                "senha": "qkl2345",
+                "curso": "MA",
+                "id": 3
+              }
+            ],
+            "tarefas": [],
+            "noticias": [
+              {
+                "id": 1,
+                "curso": "DS",
+                "titulo": "Nova Versão do JavaScript",
+                "descricao": "O JavaScript foi atualizado recentemente"
+              },
+              {
+                "id": 2,
+                "curso": "DS",
+                "titulo": "Python será ensinado nas escolas",
+                "descricao": "De acordo com os alunos Pyhton > Portugol"
+              },
+              {
+                "id": 3,
+                "curso": "DS",
+                "titulo": "Steve Jobs ressuscitou",
+                "descricao": "O gênio da tecnologia está vivendo em Minas Gerais"
+              },
+              {
+                "id": 4,
+                "curso": "MA",
+                "titulo": "Planilhas",
+                "descricao": "Siga as dicas para fazer sua planilhia da maneira correta"
+              },
+              {
+                "id": 5,
+                "curso": "MA",
+                "titulo": "PowerPoint foi descontinuado",
+                "descricao": "Não haverá novas versões do PowerPoint"
+              },
+              {
+                "id": 6,
+                "curso": "MA",
+                "titulo": "Modelo A32",
+                "descricao": "Novo modelo de negócios e admnistração"
+              }
+            ]
+        }
+    )
+})
+
+app.get('/usuarios', (req, resp) => {
+    resp.json(
+        {
+            "usuarios": [
+              {
+                "name": "Eduardo",
+                "trofeu": false,
+                "email": "jvsantosrocha980@gmail.com",
+                "senha": "123",
+                "curso": "DS",
+                "id": 1
+              },
+              {
+                "name": "Rodrigo",
+                "trofeu": false,
+                "email": "rodrigodrigo@gmail.com",
+                "senha": "qkl2345",
+                "curso": "MA",
+                "id": 3
+              }
+            ],
+        }
+    )
+})
+
+app.get('/tarefas', (req, resp) => {
+    resp.json(
+        {
+            "tarefas": []
+        }
+    )
+})
+
+app.get('/noticias', (req, resp) => {
+    resp.json(
+        {
+            "noticias": [
+                {
+                  "id": 1,
+                  "curso": "DS",
+                  "titulo": "Nova Versão do JavaScript",
+                  "descricao": "O JavaScript foi atualizado recentemente"
+                },
+                {
+                  "id": 2,
+                  "curso": "DS",
+                  "titulo": "Python será ensinado nas escolas",
+                  "descricao": "De acordo com os alunos Pyhton > Portugol"
+                },
+                {
+                  "id": 3,
+                  "curso": "DS",
+                  "titulo": "Steve Jobs ressuscitou",
+                  "descricao": "O gênio da tecnologia está vivendo em Minas Gerais"
+                },
+                {
+                  "id": 4,
+                  "curso": "MA",
+                  "titulo": "Planilhas",
+                  "descricao": "Siga as dicas para fazer sua planilhia da maneira correta"
+                },
+                {
+                  "id": 5,
+                  "curso": "MA",
+                  "titulo": "PowerPoint foi descontinuado",
+                  "descricao": "Não haverá novas versões do PowerPoint"
+                },
+                {
+                  "id": 6,
+                  "curso": "MA",
+                  "titulo": "Modelo A32",
+                  "descricao": "Novo modelo de negócios e admnistração"
+                }
+            ]
+        }
+    )
+})
+
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+})
